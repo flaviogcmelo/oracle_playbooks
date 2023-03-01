@@ -1,0 +1,10 @@
+---
+- hosts: all
+  
+  roles:
+    - role: install-server
+      when: ansible_distribution=="OracleLinux"
+
+    - role: install-packages-19c
+      when: ansible_distribution=="OracleLinux"
+      tags: install_packages
